@@ -8,6 +8,7 @@
 
 import UIKit
 
+// case1 스토리보드를 사용하여 뷰 구성할 경우 
 class ViewController: UIViewController {
     
     // MARK: - View

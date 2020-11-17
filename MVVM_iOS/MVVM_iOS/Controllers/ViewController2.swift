@@ -8,6 +8,7 @@
 
 import UIKit
 
+// case2 코드를 사용하여 뷰 구성할 경우
 class ViewController2: UIViewController {
     
     override func viewDidLoad() {
