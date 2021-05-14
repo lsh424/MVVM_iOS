@@ -6,7 +6,7 @@
 //  Copyright © 2020 LSH. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 // MARK: - Model
 class Dog {
@@ -22,14 +22,17 @@ class Dog {
     let name: String
     let birthday: Date
     let breed: Breed
-    let image: UIImage
+    let imageName: String
     
-    init(name: String, birthday: Date, breed: Breed, image: UIImage) {
+    init(name: String = "pomeranian", birthday: Date = Date(timeIntervalSinceNow: (-2 * 86500 * 380)), breed: Breed = .pomeranian, imageName: String = "pomeranian.jpeg") {
         self.name = name
         self.birthday = birthday
         self.breed = breed
-        self.image = image
+        self.imageName = imageName
     }
 }
+
+
+
 
 

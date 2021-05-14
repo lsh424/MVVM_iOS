@@ -17,20 +17,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var ageLabel: UILabel!
     @IBOutlet weak var adoptionFeeLabel: UILabel!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        let viewModel = DogViewModel()
         
-        // data
-        guard let image = UIImage(named: "pomeranian.jpeg") else {return}
-        let birthday = Date(timeIntervalSinceNow: (-2 * 86500 * 380))
-        
-        let pomeranian = Dog(name: "pomeranian", birthday: birthday, breed: .pomeranian, image: image)
-        
-        
-        let viewModel = DogViewModel(dog: pomeranian)
-        
-        imageView.image = viewModel.image
+        imageView.image = UIImage(named: viewModel.imageName)
         nameLabel.text = viewModel.name
         ageLabel.text = viewModel.ageText
         adoptionFeeLabel.text = viewModel.adoptionFeeText

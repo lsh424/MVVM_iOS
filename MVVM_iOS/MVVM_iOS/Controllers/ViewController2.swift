@@ -17,17 +17,10 @@ class ViewController2: UIViewController {
         // View
         let dogView = DogView()
         
-        // data
-        guard let image = UIImage(named: "pomeranian.jpeg") else {return}
-        let birthday = Date(timeIntervalSinceNow: (-2 * 86500 * 380))
-        
-        let pomeranian = Dog(name: "pomeranian", birthday: birthday, breed: .pomeranian, image: image)
-        
-        let viewModel = DogViewModel(dog: pomeranian)
+        let viewModel = DogViewModel()
         viewModel.configure(dogView)
         
         self.view.addSubview(dogView)
-
         
         // layout
         dogView.translatesAutoresizingMaskIntoConstraints = false
@@ -36,5 +29,5 @@ class ViewController2: UIViewController {
         dogView.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.9).isActive = true
         dogView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -100).isActive = true
     }
-
 }
+

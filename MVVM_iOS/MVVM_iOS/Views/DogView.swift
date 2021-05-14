@@ -12,6 +12,11 @@ import UIKit
 class DogView: UIView {
     
     // 뷰를 스토리보드로 만들지 않고 코드로 작성시 사용
+    var imageName: String = "" {
+        willSet {
+            imageView.image = UIImage(named: newValue)
+        }
+    }
     
     let imageView: UIImageView = {
         let imageView = UIImageView()

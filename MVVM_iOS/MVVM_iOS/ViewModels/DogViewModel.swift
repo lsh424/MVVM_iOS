@@ -7,15 +7,14 @@
 //
 
 import Foundation
-import UIKit
 
 // MARK: - ViewModel
 class DogViewModel {
     let dog: Dog
     let calendar: Calendar
     
-    init(dog: Dog){
-        self.dog = dog
+    init(){
+        self.dog = Dog()
         self.calendar = Calendar(identifier: .gregorian)
     }
     
@@ -23,8 +22,8 @@ class DogViewModel {
         return dog.name
     }
     
-    var image: UIImage {
-        return dog.image
+    var imageName: String {
+        return dog.imageName
     }
     
     var ageText: String {
@@ -52,7 +51,7 @@ class DogViewModel {
 extension DogViewModel {
     func configure(_ view: DogView) {
         view.nameLabel.text = name
-        view.imageView.image = image
+        view.imageName = imageName
         view.ageLabel.text = ageText
         view.adoptionFeeLabel.text = adoptionFeeText
     }
